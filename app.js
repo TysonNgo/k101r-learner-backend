@@ -31,6 +31,8 @@ router.route('/words')
 			english: '',
 			english_alias: '',
 			description: '',
+			dictation_id: '',
+			vocab_id: '',
 			honorific: false,
     	});
 
@@ -51,6 +53,10 @@ router.route('/words')
     		query.type = req.query.type;
     	if (req.query.hasOwnProperty('honorific'))
     		query.honorific = req.query.honorific;
+    	if (req.query.hasOwnProperty('dictation_id'))
+    		query.dictation_id = req.query.dictation_id
+    	if (req.query.hasOwnProperty('vocab_id'))
+    		query.vocab_id = req.query.vocab_id
 
     	Word.find(query, (err,obj) => {
     		res.json(obj);
