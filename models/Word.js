@@ -31,7 +31,7 @@ var wordSchema = new Schema({
 	},
 	type: {
 		type: Number,
-		set: v => (v & (v-1)) == 0 ? v : 0,
+		set: v => Math.round(v),
 		default: 0
 	},
 	honorific: {

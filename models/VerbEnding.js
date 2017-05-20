@@ -15,7 +15,7 @@ var verbEndingSchema = new Schema({
 	},
 	speech: {
 		type: Number,
-		set: v => (v & (v-1)) == 0 ? v : 0,
+		set: v => Math.round(v),
 		default: 0
 	},
 	type: {
@@ -27,6 +27,10 @@ var verbEndingSchema = new Schema({
 		type: Number,
 		set: v => (Math.abs(v) <= 1) ? v : 0,
 		default: 0
+	},
+	honorific: {
+		type:Boolean,
+		default: false
 	}
 }, {versionKey: false});
 

@@ -69,6 +69,7 @@ router.route('/verb_endings')
     	var verbEnding = createDocumentFor(VerbEnding, req, {
     		vowel: undefined,
     		consonant: undefined,
+    		honorific: false,
     		speech: 0,
     		type: 0,
     		tense: 0
