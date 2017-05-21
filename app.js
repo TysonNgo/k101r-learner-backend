@@ -5,6 +5,12 @@ var bodyParser = require('body-parser'),
     VerbEnding = require('./models/VerbEnding');
 
 var app = express();
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -98,7 +104,7 @@ router.route('/verb_endings')
     });
 
 
-app.use('/api', router);
+app.use(process.env.ROUTE, router);
 app.listen(port);
 
 console.log("API on port: "+ port);
