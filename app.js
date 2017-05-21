@@ -37,7 +37,6 @@ router.route('/words')
 			english: '',
 			english_alias: '',
 			description: '',
-			dictation_id: '',
 			vocab_id: '',
 			honorific: false,
     	});

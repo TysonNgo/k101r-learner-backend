@@ -13,10 +13,6 @@ var wordSchema = new Schema({
 		type:String,
 		default: ''
 	},
-	dictation_id: {
-		type: String,
-		default: ''
-	},
 	vocab_id: {
 		type: String,
 		default: ''
