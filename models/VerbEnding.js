@@ -31,6 +31,10 @@ var verbEndingSchema = new Schema({
 	honorific: {
 		type:Boolean,
 		default: false
+	},
+	negative: {
+		type:Boolean,
+		default: false
 	}
 }, {versionKey: false});
 

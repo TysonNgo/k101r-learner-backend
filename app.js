@@ -75,6 +75,7 @@ router.route('/verb_endings')
     		vowel: undefined,
     		consonant: undefined,
     		honorific: false,
+            negative: false,
     		speech: 0,
     		type: 0,
     		tense: 0
@@ -92,6 +93,10 @@ router.route('/verb_endings')
     		query._id = req.query.id;
     	if (req.query.hasOwnProperty('tense'))
     		query.tense = req.query.tense;
+        if (req.query.hasOwnProperty('honorific'))
+            query.honorific = req.query.honorific;
+        if (req.query.hasOwnProperty('negative'))
+            query.negative = req.query.negative;
     	if (req.query.hasOwnProperty('type'))
     		query.type = req.query.type;
     	if (req.query.hasOwnProperty('speech'))
