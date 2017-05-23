@@ -11,7 +11,6 @@ Retrieve information about Korean vocabulary.
 - `id` - ID of the word
 - `korean` - Korean word
 - `english` - English translation of the Korean word
-- `dictation_id` - Dictation ID
 - `vocab_id` - Vocabulary ID
 - `type` - Bitwise enum of the type of word (particle, noun, etc.)
 - `honorific` - Boolean for honorific words
