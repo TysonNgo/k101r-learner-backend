@@ -31,6 +31,9 @@ function createDocumentFor(Model, req, attrs) {
 
 router.route('/words')
 	.post((req, res) => {
+        if (req.body.key !== process.env.API_KEY)
+            return res.send(401);
+
     	var word = createDocumentFor(Word, req, {
 			korean: undefined,
 			type: 0,
@@ -71,6 +74,9 @@ router.route('/words')
 
 router.route('/verb_endings')
     .post((req,res) => {
+        if (req.body.key !== process.env.API_KEY)
+            return res.send(401);
+
     	var verbEnding = createDocumentFor(VerbEnding, req, {
     		vowel: undefined,
     		consonant: undefined,
